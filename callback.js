@@ -41,24 +41,39 @@
 // console.log(calc(4,4, function(a, b) {
 //     return a - b;
 // }));
-var arr = [{
-    num: 5,
-    str: 'apple'
-},
-{
-    num: 7,
-    str: 'cabage'
-},
-{
-    num: 1,
-    str: 'banana'
-}];
-arr.sort(function(val1, val2){
-    if (val1.str < val2.str) {
-        return -1;
-    }
-    else{
-        return 1;
-    }
-})
-console.log(arr);
+// var arr = [{
+//     num: 5,
+//     str: 'apple'
+// },
+// {
+//     num: 7,
+//     str: 'cabage'
+// },
+// {
+//     num: 1,
+//     str: 'banana'
+// }];
+// arr.sort(function(val1, val2){
+//     if (val1.str < val2.str) {
+//         return -1;
+//     }
+//     else{
+//         return 1;
+//     }
+// })
+// console.log(arr);
+
+const posts = [
+    {title: 'post one', body: 'this is post one'},
+    {title: 'post two', body: 'this is post two'}
+];
+ function getPosts () {
+    setTimeout(() => {
+        let output ='';
+        posts.forEach((post, index) =>{
+            output += `${post.title}`;
+        })
+        return output;
+    }, 1000);
+ }
+ getPosts()
