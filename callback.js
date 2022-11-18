@@ -63,17 +63,41 @@
 // })
 // console.log(arr);
 
-const posts = [
-    {title: 'post one', body: 'this is post one'},
-    {title: 'post two', body: 'this is post two'}
-];
- function getPosts () {
-    setTimeout(() => {
-        let output ='';
-        posts.forEach((post, index) =>{
-            output += `${post.title}`;
-        })
-        return output;
-    }, 1000);
- }
- getPosts()
+// const posts = [
+//     {title: 'post one', body: 'this is post one'},
+//     {title: 'post two', body: 'this is post two'}
+// ];
+//  function getPosts () {
+//     setTimeout(() => {
+//         let output ='';
+//         posts.forEach((post, index) =>{
+//             output += `${post.title}`;
+//         })
+//         return output;
+//     }, 1000);
+//  }
+//  getPosts()
+
+const uno = () => {
+    return 'I am one';
+}
+const dos = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve('I am two');
+      }, 3000);
+    })
+}
+const tres = () => {
+    return 'I am three';
+}
+
+const callMe = async() =>{
+    let valOne = uno();
+    console.log(valOne);
+    let valTwo = await dos();
+    console.log(valTwo);
+    let valThree = tres();
+    console.log(valThree);
+}
+callMe();

@@ -110,15 +110,29 @@ function processRequest(response){
 //        console.log(err)
 // })
 
-async function doWork(){
-       try{
-              const response = await makeRequest('facebook');
-  console.log('response received');
-  const processResponse = await processRequest(response)
-  console.log(processResponse);
-       } catch(err){
-              console.log(err)
-       }
+// async function doWork(){
+//        try{
+//               const response = await makeRequest('facebook');
+//   console.log('response received');
+//   const processResponse = await processRequest(response)
+//   console.log(processResponse);
+//        } catch(err){
+//               console.log(err)
+//        }
   
-}
+// }
 doWork()
+console.console.log('person1: shows ticket');
+console.log('person2: shows ticket');
+const PromiseBringTicket = new Promise((resolve, reject) =>{
+       setTimeout(() => {
+         resolve('ticket');     
+       }, 3000);
+})
+PromiseBringTicket.then((ticket) => {
+       console.log(`person3: shows ${ticket}`);
+})
+PromiseBringTicket();
+console.console.log('person4: shows ticket');
+console.log('person5: shows ticket');
+
