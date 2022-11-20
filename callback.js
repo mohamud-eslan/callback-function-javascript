@@ -78,26 +78,39 @@
 //  }
 //  getPosts()
 
-const uno = () => {
-    return 'I am one';
-}
-const dos = () => {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-          resolve('I am two');
-      }, 3000);
-    })
-}
-const tres = () => {
-    return 'I am three';
-}
+// const uno = () => {
+//     return 'I am one';
+// }
+// const dos = () => {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//           resolve('I am two');
+//       }, 3000);
+//     })
+// }
+// const tres = () => {
+//     return 'I am three';
+// }
 
-const callMe = async() =>{
-    let valOne = uno();
-    console.log(valOne);
-    let valTwo = await dos();
-    console.log(valTwo);
-    let valThree = tres();
-    console.log(valThree);
+// const callMe = async() =>{
+//     let valOne = uno();
+//     console.log(valOne);
+//     let valTwo = await dos();
+//     console.log(valTwo);
+//     let valThree = tres();
+//     console.log(valThree);
+// }
+// callMe();
+
+function add(x, y){
+return x + y
 }
-callMe();
+function addFive(x, addReference){
+    return addReference(5, x);
+
+}
+console.log(addFive(10, add));
+function higherOrder(x, callback){
+    return callback(5, x)
+}
+console.log(higherOrder(10, add));
